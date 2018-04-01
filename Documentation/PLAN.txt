@@ -1,0 +1,8 @@
+1. Wprowadzenie - co bedzie w czesci teoretycznej i praktycznej
+2. Cel algorytmu - zaprezentowanie co ma obliczyc
+3. Opis algorytmu  - jak dziala, jak bedzie wszystko liczone
+4. Ograniczenia algorytmu - zgubienie sie w lokalnym minimum, funkcje, ktore nie posiadaja minimum
+5. Prezentacja danych - wykres, czym będzie spodziewany wynik algorytmu reczne przewidywania
+6. Wybor punktu startowego - jak to sie dzieje, na co to mogloby wplynac
+7. Funkcja kosztu
+8. Obliczanie gradientu
