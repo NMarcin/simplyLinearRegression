@@ -7,7 +7,16 @@ Dane używane przez nas do algorytmu to para liczb - cena mieszkania oraz jego i
 \\
 Zebranych zostało 53 przykładów danych, z tego 3 zostaną przeznaczone na odrzucenie najbardziej odbiegających danych - jest to celowy zabieg, który pozwala usunąć około 5\% wyników, które znacząco odbiegają od normy oraz mogą spowodować niepoprawne nauczenie algorytmu, co jest równoznaczne ze źle wyznaczoną regresją liniową. Wszystkie dane zostały zebrane losowo, nie były w żaden sposób poddane modyfikacji oraz selekcji wstępnej.
 	\subsection{Zoobrazowanie zbioru danych}
-Pokazanie danych, wykresów z nimi itd
+Na poniższym wykresie przedstawiono wszystkie dane, które zostały zebrane. Jest to 53 punktów, dla których położenie jest określone poprzez wartość na osi ceny oraz powierzchni mieszkania.
+
+	\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.24]{PNG/y_X.png}
+    \caption{Surowy zbiór danych}
+    \label{lamana}
+	\end{figure}
+	
+Wszystkie dane z powyższego wykresu zostały również zebrane w poniższej tabeli. Są one ułozone w sposób nieposortowane - dokładnie w takiej samej kolejności w jakiej zostały znalezione w wyszukiwarce otodom.pl. Przy cenach mieszkań zostały odcięte wartości po przecinku, natomiast wartości powierzchni zostały niezmienione względem danych podanych na stronie - dane te mogę być lekko różne od prawdziwego stanu w danym mieszkaniu.\\
 
 \begin{tabular}{|c|c|c|c|}
 	\hline
@@ -70,22 +79,3 @@ Pokazanie danych, wykresów z nimi itd
 477 000 & 50.00 & - & -\\
 	\hline
 \end{tabular}
-
-	\subsection{Filtracja}
-Wywalenie 3 danych, czemu, żeby graniczne wywalić, bo psują zazwyczaj itd.	
-	
-	%\begin{figure}[H]
-    %\centering
-    %\includegraphics[scale=0.7]{zad2wykresy/ksi=1.png}
-    %\caption{$\xi = 1$}
-    %\label{lamana}
-	%\end{figure}
-	%
-	%Otrzymaliśmy klasyczny człon inercyjny II rzędu.
-
-	%\begin{figure}[H]
-    %\centering
-    %\includegraphics[scale=0.7]{zad2wykresy/ksi=-1.png}
-    %\caption{$\xi = -1$}
-    %\label{lamana}
-	%\end{figure}
