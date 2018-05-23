@@ -29,8 +29,6 @@ for i = 1:3
   s = sum(z) / m;      % średnia cena za metr kwadratowy
   f_yX = abs(z-s);    % odchylenie od średniej ceny za metr kwadratowy
   d = find(f_yX == max(f_yX));   % zwraca indeks granicznej zmiennej
-  X(d)
-  y(d)
   X(d) = [];      % usuwanie granicznej pary (X, y)
   y(d) = [];
   m = length(X);    % aktualizowanie ilości par danych
@@ -54,16 +52,12 @@ iterations = 1500000;      % maksymalna ilosc iteracji spadku gradientowego
 
 [theta J_history theta_history]= gradientDescent(X, y, theta, alpha, iterations);
 theta
-J_history;
 
 figure;
 plot(X(:,2), y, 'rx', 'MarkerSize', 10);
-ylabel('Cena mieszkania TEST [zł]');
-xlabel('Powierzchnia TEST [m^2]');
+ylabel('Cena mieszkania [zł]');
+xlabel('Powierzchnia [m^2]');
 hold on;
-
-%f_r = theta(1) + theta(2)*[0:0.1:120];
-%plot([0:0.1:120], f_r);
 
 f_r = theta(1)*X(:,1) + theta(2)*X(:,2);
 plot(X(:,2), f_r);
