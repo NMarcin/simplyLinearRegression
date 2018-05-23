@@ -1,1 +1,58 @@
-TUTAJ BĘDZIE KACZKA DZIWACZKA
+Według definicji funkca kosztów jest to funkcja, którą za pomocą algorytmu chcemy zminimalizować. Często jest reprezentowana jako róznica między wartością wyjściową algorytmu, a wartością rzeczywistą. Generalna idea mówi, że funkcja kosztu zwraca dystans od prawdziwej wartości, a algorytm stara się by dystans był tam mały, aby był uznawany jako nieistotny.
+\newline
+\noindent
+Definicja jest trochę pogmatwana - dla naszego przypadku funkcja kosztu będzie wskaźnikiem jak dobry jest nasz algorytm. Skoro ma on na celu najlepsze przewidywania cen mieszkań w takim razie funkcja kosztu będzie najlepsza, kiedy nasza regresja liniowa będzie najlepiej obrazować aktualne oraz przyszłe dane.
+
+
+\noindent
+Dla regresji liniowej funkcja kosztu jest to kwadrat błędu między wartością wyjściową, a wartością rzeczywistą. Dużo łatwiej jest to zoobrazować wzorem:
+\newline
+\newline
+\noindent
+\large
+$$
+	J(\theta_{0}, \theta_{1}) = \frac{1}{2m}\sum_{i=1}^{m}(\hat{y_{i}}-y_{i})^{2} \\
+$$
+\normalsize
+Gdzie: \\
+\(
+	m \hspace{2cm}\textrm{ilość próbek} \\
+	\hat{y_{i}} \hspace{2cm}\textrm{przewidywana cena} \\
+	y_{i} \hspace{2cm}\textrm{rzeczywista cena} \\
+\)
+\newline
+\noindent
+Wróćmy do naszych przykładowych danych z punktu \textbf{4.3}. Obliczymy dwie funkcje kosztu, dla:
+\begin{itemize}
+
+  \item $h_{1}(x_{i})$ = 275000
+  \item $h_{2}(x_{i}) = \theta_{0} + \theta_{1}*x_{i} \textrm{ dla } \theta = [-50000\textrm{  }4500]$
+
+\end{itemize}
+Przypomnijmy dane, po filtracji zostały nam tylko trzy punkty:
+\begin{itemize}
+
+  \item 100 metrów za 500 000 zł
+  \item 50 metrów za 275 000 zł
+  \item 40 metrów za 220 000 zł
+
+\end{itemize}
+\newpage
+\noindent
+Dla pierwszej predykcji obliczenia są banalne, ponieważ nasza prezwidywana prosta jest linią równoległą do osi X. W takim razie nasza funkcja kosztu to:
+$$
+	J(275000, 0) = \frac{1}{6}*((275000-500000)^{2}+(275000-275000)^{2}+(275000-220000)^{2}) \\
+$$
+Co dajwe wynik $J = 29 108 333 333$ - jak widać jest to bardzo duża liczba, co świadczy o tym, że nie jest to najlepsza regresja liniowa. Dla drugie przypadku jest trochę więcej liczenia, dlatego pierw obliczymy predykcję, a następnie podstawimy do całego wzoru.\\
+\newline
+\(
+h(x_{1}) = -50000 + 4500 * 100 = 500000\\
+h(x_{2}) = -50000 + 4500 * 50 = 275000\\
+h(x_{3}) = -50000 + 4500 * 40 = 230000\\
+\)
+\newline
+Jak widać predykcja dla dwóch wartości jest idealna, zobaczmy w takim razie ile będzie wynosić funkcja kosztu:
+$$
+	J(275000, 0) = \frac{1}{6}*((500000-500000)^{2}+(275000-275000)^{2}+(230000-220000)^{2}) \\
+$$
+Wynik $J = 100 000 000$ również jest spory, ale dużo mniejszy niż dla pierwszej funkcji. Wielkości wyników spowodowane są tym, że operujemy na danych, które są w okolicach ćwierć do pół miliona. Jak w takim razie zadecydować, która predykcja jest lepsza? Ta, która jest mniejsza, ponieważ aktualnie jest ona bliższa osiągnięcia minimum. W taki sam sposób algorytm wybiera lepszą funkcję kosztu, aczkolwiek nie musimy wprowadzić kilkudziesięciu, kilkuset wzorów na predykcję, a spadek gradientowy sam znajduje optymalne rozwiązanie - ale o tym dokładniej z następnym punkcie.
